@@ -8,8 +8,8 @@ body, html{
     overflow: hidden;
 }
 
-.topnav a {
-    float: left;
+.topnav a{
+    display: inline-block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -17,12 +17,46 @@ body, html{
     font-size: 17px;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
+.categorias {
+    background-color: #424242;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.categorias a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.categorias a{
+    font-size: 14px;
+}
+
+.categorias a:hover{
+    text-decoration: underline;
     color: black;
 }
 
-.topnav a.active {
-    background-color: #04AA6D;
-    color: white;
+.topnav form {
+    display: inline-block;
+    padding: 14px 16px;
+    margin-left: 25%;
+}
+
+.topnav input {
+    width: 30vw;
+    border-radius: 5px;
+    height: 4vh;
+}
+
+.topnav button {
+    margin-left: 10px;
+    height: 5.5vh;
+    width: 3vw;
+    border-radius: 5px;
 }
