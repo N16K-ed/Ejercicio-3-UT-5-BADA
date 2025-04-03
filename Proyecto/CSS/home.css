@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "open-sans";
+    src: url("../fuentes/OpenSans-Regular.ttf");
+}
+
+* {
+    font-family: "open-sans";
+}
+
+.anuncios {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.venta h1 {
+    margin-left: 30px;
+    margin-bottom: 4vh;
+    font-size: 28px;
+}
+
+.objetos {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 15px;
+    margin-bottom: 7vh;
+}
+
+.objeto {
+    text-align: center;
+}
+
+.objeto h3{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 3px;
+}
+
+.objeto p{
+    margin: auto;
+    width: 150px;
+    font-size: 14px;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-bottom: 5vh;
+}
+
+.footerGrid > * {
+    padding: 0;
+    margin: 0;
+}
+
+.footerGrid form {
+    text-align: center;
+}
+
+.footerGrid input {
+    margin: 10px;
+    height: 4vh;
+    width: 18vw;
+    border-radius: 5px;
+}
+
+.footerGrid ul {
+    margin-left: 60px;
+}
+
+.footerGrid a {
+    text-decoration: none;
+    color: black;
+}
