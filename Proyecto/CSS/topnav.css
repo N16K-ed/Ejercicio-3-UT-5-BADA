@@ -1,0 +1,62 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.topnav a{
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.categorias {
+    background-color: #424242;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.categorias a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.categorias a{
+    font-size: 14px;
+}
+
+.categorias a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.topnav form {
+    display: inline-block;
+    padding: 14px 16px;
+    margin-left: 25%;
+}
+
+.topnav input {
+    width: 30vw;
+    border-radius: 5px;
+    height: 4vh;
+}
+
+.topnav button {
+    margin-left: 10px;
+    height: 5.5vh;
+    width: 3vw;
+    border-radius: 5px;
+}
