@@ -1,0 +1,13 @@
+.loginForm {
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    height: 40vh;
+    outline: 1px solid red;
+}
+
+.loginForm > form {
+    text-align: center;
+}
+
