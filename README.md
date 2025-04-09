@@ -2,3 +2,4 @@
 Tienda de Ebays
 <br>
 <img src="./Proyecto/imajes/prueba.gif" style="width: 100%; height: 40vh;" alt="">
+<img src="./Proyecto/imajes/omgotrapruebasiosi.gif" style="width: 100%; height: 40vh;" alt="">
