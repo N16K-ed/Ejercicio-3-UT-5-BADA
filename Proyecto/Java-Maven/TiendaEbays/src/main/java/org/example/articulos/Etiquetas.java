@@ -2,15 +2,24 @@ package org.example.articulos;
 
 public enum Etiquetas {
 
-    HOGAR,
-    ELECTRONICA,
-    ROPA,
-    JUGUETES,
-    LIBROS,
-    DEPORTES,
-    BELLEZA,
-    ALIMENTOS,
-    SALUD,
-    //Ejemplos de etiquetas
 
+    ELECTRONICA("Electrónica"),
+    JARDIN("Jardín"),
+    MODA("Moda"),
+    MOTOR("Motor"),
+    DEPORTES("Deportes"),
+    JUGUETESYOCIO("Juguetes y ocio"),
+    EQUIPAMIENTOINDUSTRIAL("Equipamiento industrial"),
+    OFERTAS("Ofertas"),
+    ;
+
+    private String nombre;
+
+    Etiquetas(String nombre){
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
 }

@@ -1,0 +1,71 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #414141;
+}
+
+.topnav a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover:not(:first-child) {
+    background-color: #717171;
+    text-decoration: underline;
+}
+
+.categorias {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: #4d4d4d;
+}
+
+.categorias a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.categorias a{
+    font-size: 14px;
+}
+
+.categorias a:hover{
+    text-decoration: underline;
+    background-color: #616161;
+    color: white;
+}
+
+.topnav form {
+    display: inline-block;
+    padding: 14px 16px;
+    margin-left: 25%;
+}
+
+.topnav input {
+    width: 30vw;
+    border-radius: 5px;
+    height: 4vh;
+}
+
+.topnav button {
+    margin-left: 10px;
+    height: 5.5vh;
+    width: 3vw;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: 1px solid white;
+    border: none;
+}

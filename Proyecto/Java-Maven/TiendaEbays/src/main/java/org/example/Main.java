@@ -18,26 +18,17 @@ public class Main {
         Javalin app = Javalin.create(config -> {
             // Configurar FreeMarker como motor de plantillas
             config.fileRenderer(new JavalinFreemarker(freemarkerConfig));
+
         }).start(7070);
-
-        // Ruta principal (Página de inicio)
+        // Configurar las rutas
+        // Ruta para renderizar una plantilla con datos
         app.get("/", ctx -> {
-            // Datos a pasar a la plantilla
+            // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
-            model.put("message", "¡Bienvenido a Tienda Ebays!");
 
-            // Renderizar la plantilla 'index.ftl'
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("index.ftl", model);
         });
 
-        // Ruta 'Sobre nosotros'
-        app.get("/about", ctx -> {
-            // Datos a pasar a la plantilla
-            Map<String, Object> model = new HashMap<>();
-            model.put("about", "Tienda Ebays es una tienda de ejemplo para demostración.");
-
-            // Renderizar la plantilla 'about.ftl'
-            ctx.render("about.ftl", model);
-        });
     }
 }

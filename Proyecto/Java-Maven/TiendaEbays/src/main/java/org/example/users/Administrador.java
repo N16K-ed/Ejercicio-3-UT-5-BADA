@@ -2,6 +2,8 @@ package org.example.users;
 
 import org.example.articulos.Articulo;
 
+
+//Puede realizar las operaciones CRUD
 public class Administrador extends Usuario{
     private int idAdministrador;
 

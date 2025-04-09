@@ -2,6 +2,10 @@ package org.example.users;
 
 import org.example.articulos.Articulo;
 
+
+
+// Solo consultas
+// No puede modificar nada
 public class Usuario {
     private String nombre;
     private String email;
