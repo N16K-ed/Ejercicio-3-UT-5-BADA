@@ -4,11 +4,20 @@
     width: 500px;
     justify-content: center;
     align-items: center;
-    border: 1px solid gray;
-    border-radius: 5px;
+   
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .formulario{
+    border: 1px solid gray;
+    border-radius: 5px;
     
-    align-self: center;
+    
+}
+hr{
+    margin-top: 2rem;
+    width: 90%
+    
+}
+.sign_in{
+    margin-bottom: 2rem;
 }
