@@ -41,6 +41,7 @@
 }
 
 .objeto img {
+    width: 60%; /* nuevo */
     border-radius: 10px;
 }
 
@@ -52,7 +53,7 @@
 
 .objeto p{
     margin: auto;
-    width: 150px;
+    width: 70%; /* nuevo */
     font-size: 14px;
 }
 
