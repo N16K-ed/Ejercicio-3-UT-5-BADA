@@ -81,7 +81,7 @@
 <body>
     <div class="wrapper">
         <div class="loginForm">
-            <form action="/register" method="POST">
+            <form action="/regis" method="POST">
                 <h1>Registrarse</h1>
                 <label for="">Nombre de usuario:</label><br><br>
                 <input type="text" name="usuario" id=""><br><br>
@@ -89,8 +89,8 @@
                 <input type="text" name="contrasenya" id=""><br><br>
                 <button type="submit">Crear cuenta</button>
                 <br>
-                <p>Ya tienes una cuenta?</p>
-                <button type="button" onclick="window.location.href='login.html';">Inicia sesión</button>
+                <p>¿Ya tienes una cuenta?</p>
+                <button type="button" onclick="window.location.href='/login';">Inicia sesión</button>
             </form>
         </div>
     </div>
