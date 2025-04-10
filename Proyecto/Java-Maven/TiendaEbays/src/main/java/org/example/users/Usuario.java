@@ -2,36 +2,47 @@ package org.example.users;
 
 import org.example.articulos.Articulo;
 
-
-
 // Solo consultas
 // No puede modificar nada
 public class Usuario {
     private String nombre;
+    private String apellido1;
+    private String apellido2;
+    private String nombre_usuario;
     private String email;
-    private String password;
+    private String contrasenya;
 
-    public Usuario(String nombre, String email, String password) {
+    public Usuario(String nombre, String apellido1, String apellido2, String nombre_usuario, String contrasenya, String email) {
         this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.nombre_usuario = nombre_usuario;
+        this.contrasenya = contrasenya;
         this.email = email;
-        this.password = password;
-    }
-
-    public Usuario registrar(String nombre, String email, String password) {
-
-        return new Usuario(nombre, email, password);
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getApellido1() {
+        return apellido1;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public String getNombre_usuario() {
+        return nombre_usuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getContrasenya() {
+        return contrasenya;
     }
 
     public void comprar(Articulo articulo) {

@@ -16,7 +16,7 @@
             margin: auto;
             margin-top: 10%;
             margin-bottom: 20%;
-            height: 40vh;
+            height: auto;
             outline: 1px solid gray;
         }
 
@@ -83,10 +83,24 @@
         <div class="loginForm">
             <form action="/regis" method="POST">
                 <h1>Registrarse</h1>
+                <label for="">Nombre:</label><br><br>
+                <input type="text" name="nombre" id=""><br><br>
+                <label for="">Apellidos:</label><br><br>
+                <input type="text" name="appellido1" id=""><br><br>
+                <input type="text" name="apellido2" id=""><br><br>
+                <br><hr><br><br>
                 <label for="">Nombre de usuario:</label><br><br>
                 <input type="text" name="usuario" id=""><br><br>
+                <label for="">Email:</label><br><br>
+                <input type="email" name="email" id=""><br><br>
+                <label for="">Confirmar Email:</label><br><br>
+                <input type="text" name="conf_email" id=""><br><br>
                 <label for="">Contraseña:</label><br><br>
                 <input type="text" name="contrasenya" id=""><br><br>
+                <label for="">Confirmar contraseña:</label><br><br>
+                <input type="text" name="conf_contrasenya" id=""><br><br>
+                <br><hr><br><br>
+
                 <button type="submit">Crear cuenta</button>
                 <br>
                 <p>¿Ya tienes una cuenta?</p>

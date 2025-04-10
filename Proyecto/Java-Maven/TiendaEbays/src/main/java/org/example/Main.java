@@ -70,6 +70,12 @@ public class Main {
         app.post("/regis" , ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
+            model.put("nombre", ctx.formParam("nombre"));
+            model.put("apellido1", ctx.formParam("apellido1"));
+            model.put("apellido2", ctx.formParam("apellido2"));
+            model.put("usuario", ctx.formParam("nombre_usuario"));
+            model.put("email", ctx.formParam("email"));
+            model.put("contrasenya", ctx.formParam("contrasenya"));
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("conf_regis.ftl", model);
