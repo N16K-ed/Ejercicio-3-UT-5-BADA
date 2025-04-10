@@ -53,12 +53,26 @@ public class Main {
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("login.ftl", model);
         });
-        app.get("/regis", ctx -> {
+        app.post("/inisesion", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
-            ctx.render("regis.ftl", model);
+            ctx.render("inisesion.ftl", model);
+        });
+        app.get("/registrarse", ctx -> {
+            // Crear un mapa de datos a pasar a la plantilla
+            Map<String, Object> model = new HashMap<>();
+
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            ctx.render("registrarse.ftl", model);
+        });
+        app.post("/regis" , ctx -> {
+            // Crear un mapa de datos a pasar a la plantilla
+            Map<String, Object> model = new HashMap<>();
+
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            ctx.render("conf_regis.ftl", model);
         });
 
     }

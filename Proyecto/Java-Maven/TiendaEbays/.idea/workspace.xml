@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96ddc171-1acd-431d-98b9-ee43d5b78cd8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/inisesion.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.ftl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,18 +28,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;N16K-ed&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/N16K-ed/Ejercicio-3-UT-5-BADA.git&quot;,
-    &quot;accountId&quot;: &quot;1911c53c-b183-45ae-8ac6-cd1b08ebc21f&quot;
-  }
-}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -52,12 +42,10 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AlumTA/Desktop/Ejercicio-3-UT-5-BADA/Proyecto/Java-Maven/TiendaEbays&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/AlumTA/Desktop/Ejercicio-3-UT-5-BADA/Proyecto/Java-Maven/TiendaEbays/src/main/java/org/example/Main.java&quot;
   }
 }</component>
@@ -65,15 +53,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AlumTA\Desktop\Ejercicio-3-UT-5-BADA\Proyecto\Java-Maven\TiendaEbays\src\main\resources\templates" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="freemarker-javalin" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,7 +70,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>64</line>
+          <line>42</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

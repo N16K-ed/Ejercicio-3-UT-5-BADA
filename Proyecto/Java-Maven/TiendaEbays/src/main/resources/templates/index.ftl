@@ -278,7 +278,7 @@ body, html{
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
             <a href="/login">Login</a>
-            <a href="registrarse.html">Registrarse</a>
+            <a href="/registrarse">Registrarse</a>
         </div>
         <div class="categorias">
             <a href="">Electronica</a>

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Ebays</title>
+    <title>Iniciar Sesión</title>
 </head>
 <body>
-<p>¡Has sido registrado!</p>
+<p>¡Has iniciado sesión!</p>
 <a href="/">Volver a la página principal</a>
 </body>
 

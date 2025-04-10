@@ -54,16 +54,20 @@
 <body>
     <div class="wrapper">
         <div class="loginForm">
-            <form action="/inisesion" method="POST">
-                <h1>Iniciar Sesión</h1>
+            <form action="/regis" method="POST">
+                <h1>Registrarse</h1>
                 <label for="">Nombre de usuario:</label><br><br>
                 <input type="text" name="usuario" id=""><br><br>
+                <label for="">Email:</label><br><br>
+                <input type="text" name="email" id=""><br><br>
                 <label for="">Contraseña:</label><br><br>
                 <input type="text" name="contrasenya" id=""><br><br>
-                <button type="submit">Iniciar Sesión</button>
+                <label for="">Confirmar contraseña:</label><br><br>
+                <input type="text" name="confirmarcontrasenya" id=""><br><br>
+                <button type="submit">Registrarse</button>
                 <br>
-                <p>Aún no te has creado una cuenta?</p>
-                <button><a href="/registrarse">Registrarse</a></button>
+
+                <button><a href="/">Volver a la página principal</a></button>
             </form>
         </div>
     </div>
