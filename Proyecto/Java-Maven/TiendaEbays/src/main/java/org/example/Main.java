@@ -21,6 +21,7 @@ public class Main {
 
         }).start(7070);
         // Configurar las rutas
+
         // Ruta para renderizar una plantilla con datos
         app.get("/", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
@@ -28,6 +29,36 @@ public class Main {
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("index.ftl", model);
+        });
+
+        app.post("/", ctx -> {
+            // Obtener los datos del formulario
+            String nombre = ctx.formParam("nombre");
+            String email = ctx.formParam("email");
+            String password = ctx.formParam("password");
+
+            // Crear un mapa de datos a pasar a la plantilla
+            Map<String, Object> model = new HashMap<>();
+            //model.put("nombre", nombre);
+            //model.put("email", email);
+            //model.put("password", password);
+
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            ctx.render("index.ftl", model);
+        });
+        app.get("/login", ctx -> {
+            // Crear un mapa de datos a pasar a la plantilla
+            Map<String, Object> model = new HashMap<>();
+
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            ctx.render("login.ftl", model);
+        });
+        app.get("/regis", ctx -> {
+            // Crear un mapa de datos a pasar a la plantilla
+            Map<String, Object> model = new HashMap<>();
+
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            ctx.render("regis.ftl", model);
         });
 
     }

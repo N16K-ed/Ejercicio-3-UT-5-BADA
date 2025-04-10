@@ -277,7 +277,7 @@ body, html{
                 <input type="text" placeholder="Buscar..." name="" id="">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
-            <a href="login.html">Login</a>
+            <a href="/login">Login</a>
             <a href="registrarse.html">Registrarse</a>
         </div>
         <div class="categorias">
