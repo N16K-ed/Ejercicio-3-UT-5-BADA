@@ -43,14 +43,20 @@ constraint fk_art_compra foreign key (id_art) references articulos(id_articulo)
 
 drop table if exists etiquetas;
 create table etiquetas(
-nombre varchar(20) primary key
+nombre varchar(30) primary key
 );
 
 
 create table articulo_etiqueta (
     id_articulo int,
-    nombre_etiqueta varchar(20),
+    nombre_etiqueta varchar(30),
     primary key (id_articulo, nombre_etiqueta),
     foreign key (id_articulo) references articulos(id_articulo),
     foreign key (nombre_etiqueta) references etiquetas(nombre)
 );
+
+/*
+select * from etiquetas;
+select * from articulos;
+select * from articulo_etiqueta;
+*/
