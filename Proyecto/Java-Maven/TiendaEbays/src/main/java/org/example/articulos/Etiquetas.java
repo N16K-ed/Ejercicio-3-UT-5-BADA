@@ -22,4 +22,8 @@ public enum Etiquetas {
     public String getNombre() {
         return nombre;
     }
+
+    public Object getNombreEtiqueta() {
+        return nombre;
+    }
 }

@@ -7,8 +7,8 @@ import org.example.articulos.Articulo;
 public class Administrador extends Usuario{
     private int idAdministrador;
 
-    public Administrador(String nombre, String email, String contrasena, int idAdministrador) {
-        super(nombre, email, contrasena);
+    public Administrador(String nombre, String apellido1, String apellido2, String nombre_usuario, String contrasenya, String email, int idAdministrador) {
+        super(nombre, apellido1, apellido2, nombre_usuario, contrasenya, email);
         this.idAdministrador = idAdministrador;
     }
 

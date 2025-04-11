@@ -414,8 +414,8 @@ body, html{
                 <div>
                     <ul>
                         <li><a href="">Sobre nosotros</a></li>
-                        <li><a href="registrarse.html">Registrarse</a></li>
-                        <li><a href="login.html">Iniciar sesion</a></li>
+                        <li><a href="/registrarse">Registrarse</a></li>
+                        <li><a href="/login">Iniciar sesion</a></li>
                     </ul>
                 </div>
                 <div>
