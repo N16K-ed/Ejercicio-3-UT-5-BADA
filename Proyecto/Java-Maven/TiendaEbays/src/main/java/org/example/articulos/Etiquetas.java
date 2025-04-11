@@ -23,7 +23,7 @@ public enum Etiquetas {
         return nombre;
     }
 
-    public Object getNombreEtiqueta() {
+    public Object getNombreEtiqueta(){
         return nombre;
     }
 }

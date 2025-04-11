@@ -46,5 +46,11 @@ create table etiquetas(
 nombre varchar(20) primary key
 );
 
-alter table articulos add column etiqueta varchar (20);
-alter table articulos add constraint fk_etiqueta foreign key (etiqueta) references etiquetas(nombre);
+
+create table articulo_etiqueta (
+    id_articulo int,
+    nombre_etiqueta varchar(20),
+    primary key (id_articulo, nombre_etiqueta),
+    foreign key (id_articulo) references articulos(id_articulo),
+    foreign key (nombre_etiqueta) references etiquetas(nombre)
+);

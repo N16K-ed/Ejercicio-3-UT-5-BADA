@@ -3,12 +3,19 @@ package org.example;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 import freemarker.template.Configuration;
+import org.example.articulos.Etiquetas;
 
+import org.example.articulos.EtiquetasDAO;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+
+        // Actualizar la base de datos con las etiquetas
+        for (Etiquetas etq: Etiquetas.values()) {
+            EtiquetasDAO.comprobarInsertarEtiquetas(etq);
+        }
 
         // Configurar FreeMarker
         Configuration freemarkerConfig = new Configuration(Configuration.VERSION_2_3_31);
