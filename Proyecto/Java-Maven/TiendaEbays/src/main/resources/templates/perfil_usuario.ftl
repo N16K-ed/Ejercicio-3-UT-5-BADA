@@ -160,13 +160,13 @@
 <body>
     <div class="wrapper">
         <div class="topnav">
-            <a class="active" href="index.html">Evai</a>
+            <a class="active" href="/">Evai</a>
             <form action="">
                 <input type="text" placeholder="Buscar..." name="" id="">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
-            <a href="login.html">Login</a>
-            <a href="registrarse.html">Registrarse</a>
+            <a href="/login">Login</a>
+            <a href="/registrarse">Registrarse</a>
         </div>
         <div class="perfil">
             <img src="../imajes/usuario.jpg" alt="">

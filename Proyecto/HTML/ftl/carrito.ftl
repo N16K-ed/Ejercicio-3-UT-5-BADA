@@ -62,10 +62,10 @@
             border: none;
         }
 
-        .historial {
-            padding: 20px;
-            padding-left: 40px;
-            padding-right: 40px;
+        .compras {
+            padding: 40px;
+            padding-top: 50px;
+            padding-bottom: 50px;
             width: 80%;
             margin: auto;
             margin-top: 6vh;
@@ -76,14 +76,10 @@
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
 
-        .historial img {
-            width: 50px;
+        .compras img {
+            width: 100px;
             margin-right: 20px;
-            border-radius: 5px;
-        }
-
-        .historial h2 {
-            text-align: center;
+            border-radius: 10px;
         }
 
         .info {
@@ -156,16 +152,6 @@
             color: white;
         }
 
-        .compra {
-            background-color: lightgray;
-            padding: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
-            border-radius: 20px;
-            outline: 1px solid black;
-            margin-bottom: 4vh;
-        }
-
     </style>
 </head>
 <body>
@@ -176,83 +162,55 @@
                 <input type="text" placeholder="Buscar..." name="" id="">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
-            <a href="/login">Login</a>
-            <a href="/registrarse">Registrarse</a>
+            <a href="login.html">Login</a>
+            <a href="registrarse.html">Registrarse</a>
         </div>
     </div>
-    <div class="historial">
-        <h2>Historial de compras</h2>
-        <div class="compra">
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+    <div class="compras">
+        <div class="info">
+            <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
+            <div class="text">
+                <p><b>Nombre articulo</b></p>
+                <p>Cantidad: [Numero]</p>
+                <p>Precio: [Numero]</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <p><b>Precio total: [Numero]</b></p>
         </div>
-        <div class="compra">
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+        <div class="info">
+            <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
+            <div class="text">
+                <p><b>Nombre articulo</b></p>
+                <p>Cantidad: [Numero]</p>
+                <p>Precio: [Numero]</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <p><b>Precio total: [Numero]</b></p>
         </div>
-        <div class="compra">
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+        <div class="info">
+            <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
+            <div class="text">
+                <p><b>Nombre articulo</b></p>
+                <p>Cantidad: [Numero]</p>
+                <p>Precio: [Numero]</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+        </div>
+        <div class="info">
+            <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
+            <div class="text">
+                <p><b>Nombre articulo</b></p>
+                <p>Cantidad: [Numero]</p>
+                <p>Precio: [Numero]</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <p><b>Precio total: [Numero]</b></p>
+        </div>
+        <div class="total">
+            <h2>Precio total: [Numero]</h2>
+            <Button>Comprar</Button>
         </div>
     </div>
     <footer>
         <div class="footerGrid">
             <div>
                 <ul>
-                    <li><a href="/aboutus">Sobre nosotros</a></li>
-                    <li><a href="/registrarse">Registrarse</a></li>
-                    <li><a href="/login">Iniciar sesion</a></li>
+                    <li><a href="aboutus.html">Sobre nosotros</a></li>
+                    <li><a href="registrarse.html">Registrarse</a></li>
+                    <li><a href="login.html">Iniciar sesion</a></li>
                 </ul>
             </div>
             <div>

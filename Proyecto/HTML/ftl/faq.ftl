@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="carrito.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+
         html, body {
             margin: 0px;
+            height: 100%;
         }
 
         .wrapper {
@@ -62,59 +65,73 @@
             border: none;
         }
 
-        .historial {
-            padding: 20px;
-            padding-left: 40px;
-            padding-right: 40px;
+        .faq {
+            flex: 1;
+            padding: 40px;
+            padding-top: 50px;
+            padding-bottom: 50px;
             width: 80%;
             margin: auto;
-            margin-top: 6vh;
-            margin-bottom: 6vh;
+            margin-top: 15vh;
+            margin-bottom: 25vh;
             outline: 1px solid rgb(154, 154, 154);
             border-radius: 10px;
             background-color: rgba(221, 221, 221, 0.5);
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
 
-        .historial img {
-            width: 50px;
+        .faq img {
+            width: 100px;
             margin-right: 20px;
-            border-radius: 5px;
-        }
-
-        .historial h2 {
-            text-align: center;
-        }
-
-        .info {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .text {
-            text-align: left;
-        }
-
-        .total {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
-        }
-
-        button {
-            margin-top: 10px;
-            margin-right: 100px;
-            height: 4vh;
-            width: 6vw;
-            background-color: #414141;
             border-radius: 10px;
-            border: 1px solid rgb(139, 139, 139);
-            color: white;
         }
 
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-boton {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            background-color: #5e5e5e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-boton:hover {
+            background-color: #303030;
+        }
+
+        .faq-respuesta {
+            display: none;
+            padding: 10px;
+            background-color: #d6d6d6;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .faq-respuesta p {
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 8vh;
+            background-color: #4d4d4d;
+            padding-top: 3px;
+            margin-top: auto;
+        }
 
         footer li {
             list-style-type: none;
@@ -156,16 +173,6 @@
             color: white;
         }
 
-        .compra {
-            background-color: lightgray;
-            padding: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
-            border-radius: 20px;
-            outline: 1px solid black;
-            margin-bottom: 4vh;
-        }
-
     </style>
 </head>
 <body>
@@ -176,83 +183,42 @@
                 <input type="text" placeholder="Buscar..." name="" id="">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
-            <a href="/login">Login</a>
-            <a href="/registrarse">Registrarse</a>
+            <a href="login.html">Login</a>
+            <a href="registrarse.html">Registrarse</a>
         </div>
     </div>
-    <div class="historial">
-        <h2>Historial de compras</h2>
-        <div class="compra">
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+    <div class="faq">
+        <h2>Preguntas Frecuentes</h2>
+    
+        <div class="faq-item">
+            <button class="faq-boton">¿Cómo realizo una compra?</button>
+            <div class="faq-respuesta">
+                <p>Para realizar una compra, solo debes seleccionar el producto que te interesa, agregarlo al carrito y proceder al pago con los métodos disponibles.</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <p><b>Precio total: [Numero]</b></p>
         </div>
-        <div class="compra">
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+    
+        <div class="faq-item">
+            <button class="faq-boton">¿Cuáles son los métodos de pago?</button>
+            <div class="faq-respuesta">
+                <p>Aceptamos tarjetas de crédito, débito, PayPal y transferencias bancarias.</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <p><b>Precio total: [Numero]</b></p>
         </div>
-        <div class="compra">
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
+    
+        <div class="faq-item">
+            <button class="faq-boton">¿Puedo cambiar mi pedido después de realizarlo?</button>
+            <div class="faq-respuesta">
+                <p>Si deseas cambiar tu pedido, contáctanos dentro de las 24 horas después de realizar la compra.</p>
             </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <div class="info">
-                <img src="https://i.ibb.co/BHVs23qY/image.png" alt="">
-                <div class="text">
-                    <p>Nombre articulo</p>
-                </div>
-            </div>
-            <p><b>Precio total: [Numero]</b></p>
         </div>
     </div>
+    
     <footer>
         <div class="footerGrid">
             <div>
                 <ul>
-                    <li><a href="/aboutus">Sobre nosotros</a></li>
-                    <li><a href="/registrarse">Registrarse</a></li>
-                    <li><a href="/login">Iniciar sesion</a></li>
+                    <li><a href="aboutus.html">Sobre nosotros</a></li>
+                    <li><a href="registrarse.html">Registrarse</a></li>
+                    <li><a href="login.html">Iniciar sesion</a></li>
                 </ul>
             </div>
             <div>
@@ -264,5 +230,22 @@
             </div>
         </div>
     </footer>
+    <script>
+        const faqButtons = document.querySelectorAll('.faq-boton');
+
+        // Agregamos el evento de clic a cada botón
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>

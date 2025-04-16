@@ -3,9 +3,6 @@ package org.example.articulos;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ArticuloDAO {
 
     private static final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -21,7 +18,6 @@ public class ArticuloDAO {
                     .setParameter("descripcion", articulo.getDescripcion())
                     .executeUpdate();
             session.getTransaction().commit();
-            //session.getTransaction().commit();
         } catch (Exception e) {
             if (session.getTransaction() != null) {
                 session.getTransaction().rollback();

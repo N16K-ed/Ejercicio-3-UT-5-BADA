@@ -69,7 +69,7 @@
 <body>
     <div class="wrapper">
         <div class="loginForm">
-            <form action="/regis" method="POST">
+            <form action="fin_reg.html" method="GET">
                 <h1>Registrarse</h1>
                 <label for="">Nombre:</label><br><br>
                 <input type="text" name="nombre" id=""><br><br>
@@ -92,7 +92,7 @@
                 <button type="submit">Crear cuenta</button>
                 <br>
                 <p>¿Ya tienes una cuenta?</p>
-                <button type="button" onclick="window.location.href='/login';">Inicia sesión</button>
+                <button type="button" onclick="window.location.href='login.html';">Inicia sesión</button>
             </form>
         </div>
     </div>

@@ -176,8 +176,8 @@
                 <input type="text" placeholder="Buscar..." name="" id="">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
-            <a href="/login">Login</a>
-            <a href="/registrarse">Registrarse</a>
+            <a href="login.html">Login</a>
+            <a href="registrarse.html">Registrarse</a>
         </div>
     </div>
     <div class="historial">
@@ -250,9 +250,9 @@
         <div class="footerGrid">
             <div>
                 <ul>
-                    <li><a href="/aboutus">Sobre nosotros</a></li>
-                    <li><a href="/registrarse">Registrarse</a></li>
-                    <li><a href="/login">Iniciar sesion</a></li>
+                    <li><a href="aboutus.html">Sobre nosotros</a></li>
+                    <li><a href="registrarse.html">Registrarse</a></li>
+                    <li><a href="login.html">Iniciar sesion</a></li>
                 </ul>
             </div>
             <div>

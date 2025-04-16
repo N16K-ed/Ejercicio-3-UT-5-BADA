@@ -14,17 +14,10 @@
         .loginForm {
             width: 20%;
             margin: auto;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            height: auto;
+            margin-top: 10%;
+            margin-bottom: 20%;
+            height: 40vh;
             outline: 1px solid gray;
-            backdrop-filter: blur(5px);
-            outline: 1px solid rgb(175, 175, 175);
-            box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            padding: 50px;
-            padding-top: 20px;
-            padding-bottom: 100px;
         }
 
         .loginForm > form {
@@ -37,6 +30,25 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+        }
+
+        .loginForm {
+            backdrop-filter: blur(5px);
+            width: 20%;
+            margin: auto;
+            margin-top: 10%;
+            margin-bottom: 20%;
+            outline: 1px solid rgb(175, 175, 175);
+            box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+            padding-top: 20px;
+            padding-bottom: 100px;
+            
+        }
+
+        .loginForm > form {
+            text-align: center;
         }
 
         .loginForm input {
@@ -69,30 +81,16 @@
 <body>
     <div class="wrapper">
         <div class="loginForm">
-            <form action="/regis" method="POST">
-                <h1>Registrarse</h1>
-                <label for="">Nombre:</label><br><br>
-                <input type="text" name="nombre" id=""><br><br>
-                <label for="">Apellidos:</label><br><br>
-                <input type="text" name="appellido1" id=""><br><br>
-                <input type="text" name="apellido2" id=""><br><br>
-                <br><hr><br><br>
+            <form action="/inisesion" method="POST">
+                <h1>Iniciar Sesión</h1>
                 <label for="">Nombre de usuario:</label><br><br>
                 <input type="text" name="usuario" id=""><br><br>
-                <label for="">Email:</label><br><br>
-                <input type="email" name="email" id=""><br><br>
-                <label for="">Confirmar Email:</label><br><br>
-                <input type="text" name="conf_email" id=""><br><br>
                 <label for="">Contraseña:</label><br><br>
                 <input type="text" name="contrasenya" id=""><br><br>
-                <label for="">Confirmar contraseña:</label><br><br>
-                <input type="text" name="conf_contrasenya" id=""><br><br>
-                <br><hr><br><br>
-
-                <button type="submit">Crear cuenta</button>
+                <button type="submit">Iniciar Sesión</button>
                 <br>
-                <p>¿Ya tienes una cuenta?</p>
-                <button type="button" onclick="window.location.href='/login';">Inicia sesión</button>
+                <p>¿Aún no te has creado una cuenta?</p>
+                <button type="button" onclick="window.location.href='registrarse.html';">Registrate ahora</button>
             </form>
         </div>
     </div>
