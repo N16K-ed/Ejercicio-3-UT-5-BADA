@@ -16,10 +16,15 @@ public class Main {
             EtiquetasDAO.comprobarInsertarEtiquetas(etq);
         }
 
-
+        /*
+        Pruebas de la base de datos
+        */
         Usuario user1 = new Usuario("PEPE","1","2", "PepaPig","1234","pepa@gmail.com");
+        Usuario user2 = new Usuario("PEPEADMIN","1","2", "PepaPigAdmin","1234","pepa@gmail.com");
+        user2.setAdmin(true);
+
         UsuarioDAO.comprobarInsertarUsuarios(user1);
-        /*Pruebas de la base de datos*/
+        UsuarioDAO.comprobarInsertarUsuarios(user2);
 
         Articulo arti1 = new Articulo("Articulo1", 10.0, "Descripcion1");
         Articulo arti2 = new Articulo( "Articulo2", 20.0, "Descripcion2");
@@ -36,7 +41,6 @@ public class Main {
         ArticuloDAO.comprobarInsertarArticulos(arti2);
 
         ArticuloDAO.comprobarInsertarArticulos(arti3);
-        
 
         VistasControler.initVistas();
 

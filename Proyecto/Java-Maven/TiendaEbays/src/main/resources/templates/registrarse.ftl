@@ -84,9 +84,9 @@
                 <label for="">Confirmar Email:</label><br><br>
                 <input type="text" name="conf_email" id=""><br><br>
                 <label for="">Contraseña:</label><br><br>
-                <input type="text" name="contrasenya" id=""><br><br>
+                <input type="password" name="contrasenya" id=""><br><br>
                 <label for="">Confirmar contraseña:</label><br><br>
-                <input type="text" name="conf_contrasenya" id=""><br><br>
+                <input type="password" name="conf_contrasenya" id=""><br><br>
                 <br><hr><br><br>
 
                 <button type="submit">Crear cuenta</button>

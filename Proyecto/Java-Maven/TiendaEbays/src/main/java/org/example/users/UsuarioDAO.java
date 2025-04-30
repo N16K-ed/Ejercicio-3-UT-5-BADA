@@ -14,13 +14,14 @@ public class UsuarioDAO {
         try {
             session.beginTransaction();
             //session.persist(articulo);
-            session.createSQLQuery("INSERT INTO Usuarios (nombre, apellido1, apellido2, nombre_usuario, email, contrasenya) VALUES (:nombre, :apellido1, :apellido2, :nombre_usuario, :email, :contrasenya)")
+            session.createSQLQuery("INSERT INTO Usuarios (nombre, apellido1, apellido2, nombre_usuario, email, contrasenya, esAdmin) VALUES (:nombre, :apellido1, :apellido2, :nombre_usuario, :email, :contrasenya, :esAdmin)")
                     .setParameter("nombre", usuario.getNombre())
                     .setParameter("apellido1", usuario.getApellido1())
                     .setParameter("apellido2", usuario.getApellido2())
-                    .setParameter("nombre_usuario", usuario.getNombre_usuario())
+                    .setParameter("nombre_usuario", usuario.getNombre_usuario().toLowerCase())
                     .setParameter("email", usuario.getEmail())
                     .setParameter("contrasenya", usuario.getContrasenya())
+                    .setParameter("esAdmin", usuario.isEsAdmin())
                     .executeUpdate();
             session.getTransaction().commit();
         } catch (Exception e) {
@@ -58,4 +59,28 @@ public class UsuarioDAO {
                 session.close();
             }
         }
+    public static boolean comprobarUsuarios(String usuario) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Integer idUsuario = (Integer) session.createSQLQuery(
+                            "SELECT codigo_usuario FROM usuarios WHERE nombre_usuario = :nombre")
+                    .setParameter("nombre", usuario.toLowerCase())
+                    .uniqueResult();
+            if (idUsuario == null) {
+                tx.commit();
+                return false;
+            } else {
+
+                tx.commit();
+                return true;
+            }
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
     }

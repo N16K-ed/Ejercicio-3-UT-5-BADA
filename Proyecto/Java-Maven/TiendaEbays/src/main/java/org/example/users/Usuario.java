@@ -11,6 +11,7 @@ public class Usuario {
     private String nombre_usuario;
     private String email;
     private String contrasenya;
+    private boolean esAdmin;
 
     public Usuario(String nombre, String apellido1, String apellido2, String nombre_usuario, String contrasenya, String email) {
         this.nombre = nombre;
@@ -19,6 +20,7 @@ public class Usuario {
         this.nombre_usuario = nombre_usuario;
         this.contrasenya = contrasenya;
         this.email = email;
+        this.esAdmin = false;
     }
 
     public String getNombre() {
@@ -45,6 +47,9 @@ public class Usuario {
         return contrasenya;
     }
 
+    public boolean isEsAdmin() {
+        return esAdmin;
+    }
     public void comprar(Articulo articulo) {
         // Implementar la lógica de compra
     }
@@ -55,5 +60,7 @@ public class Usuario {
     public void verHistorialCompras() {
         // Lógica para ver su historial de compras
     }
-
+    public void setAdmin(boolean esAdmin) {
+        this.esAdmin = esAdmin;
+    }
 }

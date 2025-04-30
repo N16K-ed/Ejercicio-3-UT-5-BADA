@@ -94,18 +94,23 @@ public class VistasControler {
                     model.get("usuario").toString(),
                     model.get("email").toString(),
                     model.get("contrasenya").toString());
-            UsuarioDAO.comprobarInsertarUsuarios(nuevoUser);
+            //model.put("password", ctx.formParam("password"));
+            //UsuarioDAO.comprobarInsertarUsuarios(nuevoUser);
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("fin_reg.ftl", model);
         });
         app.post("/inisesion", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
-            model.put("usuario", ctx.formParam("nombre_usuario"));
+            model.put("usuario", ctx.formParam("usuario"));
             model.put("contrasenya", ctx.formParam("contrasenya"));
+            if (UsuarioDAO.comprobarUsuarios(model.get("usuario").toString())){
+                ctx.render("fin_login.ftl", model);
+            }else{
+                // Renderizar la plantilla index.ftl y pasar los datos del mapa
+                ctx.render("error_credenciales.ftl", model);
+            }
 
-            // Renderizar la plantilla index.ftl y pasar los datos del mapa
-            ctx.render("fin_reg.ftl", model);
         });
         app.get("/perfil_usuario", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
