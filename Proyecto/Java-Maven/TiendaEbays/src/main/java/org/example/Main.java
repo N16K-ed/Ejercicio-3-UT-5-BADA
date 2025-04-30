@@ -1,8 +1,12 @@
 package org.example;
 
+import org.example.articulos.Articulo;
+import org.example.articulos.ArticuloDAO;
 import org.example.articulos.Etiquetas;
 import org.example.articulos.EtiquetasDAO;
 import org.example.controladores.VistasControler;
+import org.example.users.Usuario;
+import org.example.users.UsuarioDAO;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +16,11 @@ public class Main {
             EtiquetasDAO.comprobarInsertarEtiquetas(etq);
         }
 
-        /*Pruebas de la base de datos
+
+        Usuario user1 = new Usuario("PEPE","1","2", "PepaPig","1234","pepa@gmail.com");
+        UsuarioDAO.comprobarInsertarUsuarios(user1);
+        /*Pruebas de la base de datos*/
+
         Articulo arti1 = new Articulo("Articulo1", 10.0, "Descripcion1");
         Articulo arti2 = new Articulo( "Articulo2", 20.0, "Descripcion2");
         Articulo arti3 = new Articulo("Articulo3", 30.0, "Descripcion3");
@@ -28,7 +36,7 @@ public class Main {
         ArticuloDAO.comprobarInsertarArticulos(arti2);
 
         ArticuloDAO.comprobarInsertarArticulos(arti3);
-        */
+        
 
         VistasControler.initVistas();
 

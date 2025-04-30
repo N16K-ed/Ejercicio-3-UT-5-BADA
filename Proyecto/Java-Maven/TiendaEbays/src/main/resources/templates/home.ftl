@@ -322,7 +322,7 @@
             <h1>Lo mas vendido</h1>
             <div class="objetos">
                 <div class="objeto">
-                    <a href="/product"><a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a></a>
+                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>

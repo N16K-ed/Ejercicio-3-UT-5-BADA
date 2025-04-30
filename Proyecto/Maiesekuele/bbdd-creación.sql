@@ -6,6 +6,7 @@ drop table if exists usuarios;
 create table usuarios(
 codigo_usuario int primary key auto_increment,
 nombre varchar(50) not null,
+nombre_usuario varchar (50) not null,
 apellido1 varchar(50) not null,
 apellido2 varchar(50),
 email varchar(50) not null,
@@ -59,4 +60,5 @@ create table articulo_etiqueta (
 select * from etiquetas;
 select * from articulos;
 select * from articulo_etiqueta;
+select * from usuarios;
 */
