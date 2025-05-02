@@ -108,31 +108,15 @@
     <div class="resultados">
         <h1>Resultados de tu busqueda</h1>
         <div class="resultadoGrid">
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
+            <#list articulos as articulo>
+                <div class="objecto">
+                    <a href="/product?id=${articulo.idArticulo}">
+                        <img src="../imajes/objetoimagen.png" height="150px" alt="">
+                    </a>
+                    <h3>${articulo.nombre}</h3>
+                    <p>${articulo.descripcion}</p>
+                </div>
+            </#list>
         </div>
     </div>
 
