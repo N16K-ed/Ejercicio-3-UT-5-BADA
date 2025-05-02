@@ -20,7 +20,7 @@ public class Main {
 
         /*
         Pruebas de la base de datos
-        */
+
         Usuario user1 = new Usuario("PEPE","1","2", "PepaPig","1234","pepa@gmail.com");
         Usuario user2 = new Usuario("PEPEADMIN","1","2", "PepaPigAdmin","1234","pepa@gmail.com");
         user2.setAdmin(true);
@@ -43,10 +43,7 @@ public class Main {
         ArticuloDAO.comprobarInsertarArticulos(arti2, user1);
 
         ArticuloDAO.comprobarInsertarArticulos(arti3, user1);
-
+        */
         VistasControler.initVistas();
-
-
-
     }
 }
