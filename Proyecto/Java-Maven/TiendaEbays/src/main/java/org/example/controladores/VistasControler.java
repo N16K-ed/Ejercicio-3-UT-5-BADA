@@ -86,26 +86,41 @@ public class VistasControler {
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("product.ftl", model);
         });
-        app.post("/regis" , ctx -> {
-            // Crear un mapa de datos a pasar a la plantilla
+        app.post("/regis", ctx -> {
+            // Obtener los parámetros del formulario y asegurarse de que no sean nulos
+            String nombre = ctx.formParam("nombre");
+            String apellido1 = ctx.formParam("apellido1");
+            String apellido2 = ctx.formParam("apellido2");
+            String usuario = ctx.formParam("usuario");
+            String contrasenya = ctx.formParam("email");
+            String email = ctx.formParam("contrasenya");
+
+            // Verificar si algún campo requerido es null
+            if (nombre == null || apellido1 == null || apellido2 == null || usuario == null || email == null || contrasenya == null) {
+                ctx.status(400);  // Establecer un código de error si hay campos faltantes
+                ctx.result("Faltan datos requeridos." + nombre + apellido1 + apellido2 + usuario + email + contrasenya);
+                return;
+            }
+
+            // Crear un mapa con los datos obtenidos del formulario
             Map<String, Object> model = new HashMap<>();
-            model.put("nombre", ctx.formParam("nombre"));
-            model.put("apellido1", ctx.formParam("apellido1"));
-            model.put("apellido2", ctx.formParam("apellido2"));
-            model.put("usuario", ctx.formParam("nombre_usuario"));
-            model.put("email", ctx.formParam("email"));
-            model.put("contrasenya", ctx.formParam("contrasenya"));
-            Usuario nuevoUser = new Usuario(model.get("nombre").toString(),
-                    model.get("apellido1").toString(),
-                    model.get("apellido2").toString(),
-                    model.get("usuario").toString(),
-                    model.get("email").toString(),
-                    model.get("contrasenya").toString());
-            //model.put("password", ctx.formParam("password"));
-            //UsuarioDAO.comprobarInsertarUsuarios(nuevoUser);
-            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            model.put("nombre", nombre);
+            model.put("apellido1", apellido1);
+            model.put("apellido2", apellido2);
+            model.put("usuario", usuario);
+            model.put("email", email);
+            model.put("contrasenya", contrasenya);
+
+            // Crear un nuevo usuario
+            Usuario nuevoUser = new Usuario(nombre, apellido1, apellido2, usuario, email, contrasenya);
+
+            // Aquí puedes insertar el nuevo usuario en la base de datos o realizar otra acción si es necesario
+            UsuarioDAO.comprobarInsertarUsuarios(nuevoUser);
+
+            // Renderizar la plantilla final (fin_reg.ftl) y pasar los datos del mapa
             ctx.render("fin_reg.ftl", model);
         });
+
         app.post("/inisesion", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
