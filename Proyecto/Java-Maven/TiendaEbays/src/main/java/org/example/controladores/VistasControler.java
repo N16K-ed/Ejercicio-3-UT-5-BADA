@@ -127,14 +127,8 @@ public class VistasControler {
         });
         app.post("/busqueda", ctx -> {
             Map<String, Object> model = new HashMap<>();
-            ctx.render("index.ftl", model);
+            ctx.render("busqueda.ftl", model);
         });
-        app.get("/busqueda", ctx -> {
-            // Crear un mapa de datos a pasar a la plantilla
-            Map<String, Object> model = new HashMap<>();
 
-            // Renderizar la plantilla index.ftl y pasar los datos del mapa
-            ctx.render("login.ftl", model);
-        });
     }
 }
