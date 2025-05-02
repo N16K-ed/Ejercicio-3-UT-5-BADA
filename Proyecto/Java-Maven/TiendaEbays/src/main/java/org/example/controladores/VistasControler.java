@@ -9,6 +9,8 @@ import org.example.articulos.ArticuloDAO;
 import org.example.users.Usuario;
 import org.example.users.UsuarioDAO;
 
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,11 +65,13 @@ public class VistasControler {
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("registrarse.ftl", model);
-        });
+        });/*
         app.get("/busqueda", ctx -> {
-            List<Articulo> articulos = ArticuloDAO.obtenerTodosLosArticulos(); // Obtener los artículos
-            ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar la lista de artículos a la plantilla
-        });
+            Map<String, Object> model = new HashMap<>();
+
+            // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            ctx.render("busqueda.ftl", model);
+        });*/
         app.get("/aboutus", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
@@ -122,10 +126,24 @@ public class VistasControler {
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("perfil_usuario.ftl", model);
         });
-        app.post("/busqueda", ctx -> {
-            Map<String, Object> model = new HashMap<>();
-            ctx.render("busqueda.ftl", model);
-        });
+        app.get("/busqueda", ctx -> {
+            // Obtener el parámetro 'query' de la URL
+            String query = ctx.queryParam("query");
 
+            // Obtener los artículos según el parámetro 'query'
+            List<Articulo> articulos;
+            if (query == null || query.isEmpty()) {
+                articulos = ArticuloDAO.obtenerTodosLosArticulos(); // Obtener todos los artículos
+            } else {
+                articulos = ArticuloDAO.obtenerArticuloPorNombre(query); // Buscar artículos por nombre
+            }
+
+            // Verificar si no hay artículos, para evitar pasar una lista vacía o nula
+            if (articulos == null || articulos.isEmpty()) {
+                ctx.render("no_resultados.ftl"); // Si no hay artículos, muestra una página de "no resultados"
+            } else {
+                ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar los artículos a la plantilla
+            }
+        });
     }
 }
