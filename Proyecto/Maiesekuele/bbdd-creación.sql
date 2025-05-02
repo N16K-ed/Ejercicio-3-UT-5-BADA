@@ -11,6 +11,7 @@ apellido1 varchar(50) not null,
 apellido2 varchar(50),
 email varchar(50) not null,
 contrasenya varchar(20) not null,
+esAdmin boolean not null,
 constraint chk_email check (email like '_%@_%._%')
 );
 
