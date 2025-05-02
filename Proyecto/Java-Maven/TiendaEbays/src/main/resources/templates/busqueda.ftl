@@ -108,19 +108,23 @@
     <div class="resultados">
         <h1>Resultados de tu busqueda</h1>
         <div class="resultadoGrid">
-            <#list articulos as articulo>
-                <#if articulo??>
-                    <div>
-                        <a href="/product?id=${articulo.idArticulo}">
-                            <img src="../imajes/objetoimagen.png" height="150px" alt="">
-                        </a>
-                        <h3>${articulo.nombre}</h3>
-                        <p>${articulo.descripcion}</p>
-                    </div>
-                <#else>
+            <#if articulos?size == 0>
+                <p>no hay nada llamado como lo que has buscado</p>
+            <#else>
+                <#list articulos as articulo>
+                    <#if articulo??>
+                        <div>
+                            <a href="/product?id=${articulo.idArticulo}">
+                                <img src="../imajes/objetoimagen.png" height="150px" alt="">
+                            </a>
+                            <h3>${articulo.nombre}</h3>
+                            <p>${articulo.descripcion}</p>
+                        </div>
+                    <#else>
                         <p>No se encontró el artículo.</p>
                     </#if>
                 </#list>
+            </#if>
         </div>
     </div>
 
