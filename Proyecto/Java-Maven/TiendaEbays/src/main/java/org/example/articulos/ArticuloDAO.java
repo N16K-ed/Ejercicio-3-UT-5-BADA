@@ -4,6 +4,8 @@ import org.example.users.Usuario;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.type.StandardBasicTypes;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +14,7 @@ import java.util.List;
 public class ArticuloDAO {
 
     private static final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+    private static final Logger log = LoggerFactory.getLogger(ArticuloDAO.class);
 
     public static void guardarArticulo(Articulo articulo, Usuario usuario) {
         Integer idUsuario;
@@ -124,28 +127,32 @@ public class ArticuloDAO {
         }
         return articulo;
     }
-    public Articulo obtenerArticuloPorNombre(String nombre) {
+    public static List<Articulo> obtenerArticuloPorNombre(String nombre) {
         Session session = sessionFactory.openSession();
-        Articulo articulo = null;
+        List<Articulo> articulos = new ArrayList<>();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            Object[] result = (Object[]) session.createSQLQuery(
-                            "SELECT precio, descripcion, existencias FROM articulos WHERE nombre like '% :nombre %'")
-                    .setParameter("nombre", nombre)
-                    .uniqueResult();
-            if (result != null) {
+            List<Object[]> results = session.createSQLQuery(
+                            "SELECT precio, descripcion, existencias, nombre FROM articulos WHERE nombre LIKE :nombre")
+                    .setParameter("nombre", "%" + nombre + "%")  // Concatenar los % aquí
+                    .list(); // Usamos list() para obtener una lista de resultados
+
+            for (Object[] result : results) {
                 double precio = ((Number) result[0]).doubleValue();
                 String descripcion = (String) result[1];
                 int existencias = ((Number) result[2]).intValue();
-                articulo = new Articulo(nombre, precio, descripcion, existencias);
+                nombre = (String) result[3];
+                articulos.add(new Articulo(nombre, precio, descripcion, existencias));
             }
             tx.commit();
         } finally {
             session.close();
         }
-        return articulo;
+        return articulos; // Devolvemos la lista de artículos
     }
+
+
     public Articulo obtenerArticuloPorFecha(Date fecha) {
         Session session = sessionFactory.openSession();
         Articulo articulo = null;
