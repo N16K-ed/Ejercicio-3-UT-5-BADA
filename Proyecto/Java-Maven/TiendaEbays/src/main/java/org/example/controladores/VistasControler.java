@@ -139,11 +139,12 @@ public class VistasControler {
             }
 
             // Verificar si no hay artículos, para evitar pasar una lista vacía o nula
-            if (articulos == null || articulos.isEmpty()) {
-                ctx.render("no_resultados.ftl"); // Si no hay artículos, muestra una página de "no resultados"
+            /*if (articulos == null || articulos.isEmpty()) {
+                ctx.result("no hay resultados");
             } else {
                 ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar los artículos a la plantilla
-            }
+            }*/
+            ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar los artículos a la plantilla
         });
     }
 }
