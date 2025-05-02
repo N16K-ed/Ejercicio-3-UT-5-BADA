@@ -246,5 +246,28 @@ public class ArticuloDAO {
         return etiquetas;
     }
 
+    public void anyadirExistencias(int idArticulo, int cantidad) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            int filasActualizadas = session.createSQLQuery(
+                            "UPDATE articulos SET existencias = existencias + :cantidad WHERE id_articulo = :id")
+                    .setParameter("cantidad", cantidad)
+                    .setParameter("id", idArticulo)
+                    .executeUpdate();
+
+            if (filasActualizadas == 0) {
+                System.out.println("El artículo con ID " + idArticulo + " no existe.");
+            }
+
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
 
 }
