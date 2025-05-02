@@ -239,8 +239,8 @@
     <div class="wrapper">
         <div class="topnav">
             <a class="active" href="/">Evai</a>
-            <form action="">
-                <input type="text" placeholder="Buscar..." name="" id="">
+            <form action="/busqueda" method="get">
+                <input type="text" placeholder="Buscar..." name="query" id="searchInput">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
             <a href="/login">Login</a>
