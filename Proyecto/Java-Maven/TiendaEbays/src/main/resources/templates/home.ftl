@@ -6,13 +6,10 @@
     <title>Evai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-        @font-face {
-            font-family: "open-sans";
-            src: url("../fonts/OpenSans_Condensed-Regular.ttf");
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
         * {
-            font-family: "open-sans";
+            font-family: "Open Sans", sans-serif;
         }
 
         .venta {
