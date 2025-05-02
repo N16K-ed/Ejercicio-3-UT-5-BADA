@@ -12,7 +12,7 @@
     <div class="wrapper">
         <div class="topnav">
             <a class="active" href="index.html">Evai</a>
-            <form action="">
+            <form action="/busqueda">
                 <input type="text" placeholder="Buscar..." name="" id="">
                 <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
