@@ -8,6 +8,8 @@ import org.example.controladores.VistasControler;
 import org.example.users.Usuario;
 import org.example.users.UsuarioDAO;
 
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -26,9 +28,9 @@ public class Main {
         UsuarioDAO.comprobarInsertarUsuarios(user1);
         UsuarioDAO.comprobarInsertarUsuarios(user2);
 
-        Articulo arti1 = new Articulo("Articulo1", 10.0, "Descripcion1");
-        Articulo arti2 = new Articulo( "Articulo2", 20.0, "Descripcion2");
-        Articulo arti3 = new Articulo("Articulo3", 30.0, "Descripcion3");
+        Articulo arti1 = new Articulo("Articulo1", 10.0, "Descripcion1",1);
+        Articulo arti2 = new Articulo( "Articulo2", 20.0, "Descripcion2",5);
+        Articulo arti3 = new Articulo("Articulo3", 30.0, "Descripcion3",10);
 
         arti1.getEtiquetas().add(Etiquetas.ELECTRONICA);
         arti1.getEtiquetas().add(Etiquetas.JARDIN);
@@ -36,11 +38,11 @@ public class Main {
         arti2.getEtiquetas().add(Etiquetas.ELECTRONICA);
         arti3.getEtiquetas().add(Etiquetas.DEPORTES);
 
-        ArticuloDAO.comprobarInsertarArticulos(arti1);
+        ArticuloDAO.comprobarInsertarArticulos(arti1, user1);
 
-        ArticuloDAO.comprobarInsertarArticulos(arti2);
+        ArticuloDAO.comprobarInsertarArticulos(arti2, user1);
 
-        ArticuloDAO.comprobarInsertarArticulos(arti3);
+        ArticuloDAO.comprobarInsertarArticulos(arti3, user1);
 
         VistasControler.initVistas();
 

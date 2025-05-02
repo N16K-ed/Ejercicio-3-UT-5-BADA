@@ -20,17 +20,13 @@ create table articulos(
 id_articulo int primary key auto_increment,
 nombre varchar(150) not null,
 descripcion varchar(200) not null,
-precio decimal(7,2) not null
-);
-
-drop table if exists ventas;
-create table ventas (
-id_venta int primary key auto_increment,
-cod_user int,
-id_art int,
-fecha_venta date not null,
-constraint fk_user_vende foreign key (cod_user) references usuarios(codigo_usuario),
-constraint fk_art_vende foreign key (id_art) references articulos(id_articulo)
+existencias int not null,
+precio decimal(7,2) not null,
+fecha_publicacion date not null,
+codigo_usuario int not null,
+constraint fk_user_pone_art foreign key (codigo_usuario) references usuarios(codigo_usuario),
+constraint chk_existencias check (existencias >= 0),
+constraint chk_precio check (precio >= 0)
 );
 
 drop table if exists compras;
@@ -38,6 +34,7 @@ create table compras(
 id_compra int primary key auto_increment,
 cod_user int not null,
 id_art int not null,
+cantidad int not null,
 fecha_compra date not null,
 constraint fk_user_compra foreign key (cod_user) references usuarios(codigo_usuario),
 constraint fk_art_compra foreign key (id_art) references articulos(id_articulo)
