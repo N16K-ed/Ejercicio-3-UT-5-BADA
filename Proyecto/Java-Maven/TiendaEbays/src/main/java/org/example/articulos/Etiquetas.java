@@ -26,4 +26,14 @@ public enum Etiquetas {
     public Object getNombreEtiqueta(){
         return nombre;
     }
+
+    public static Etiquetas desdeNombre(String nombreEtiqueta) {
+        for (Etiquetas e : Etiquetas.values()) {
+            if (e.getNombre().equalsIgnoreCase(nombreEtiqueta)) {
+                return e;
+            }
+        }
+        throw new IllegalArgumentException("Etiqueta no reconocida: " + nombreEtiqueta);
+    }
+
 }

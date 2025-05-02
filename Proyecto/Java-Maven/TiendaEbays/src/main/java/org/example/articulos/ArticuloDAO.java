@@ -3,6 +3,11 @@ package org.example.articulos;
 import org.example.users.Usuario;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.type.StandardBasicTypes;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class ArticuloDAO {
 
@@ -96,4 +101,143 @@ public class ArticuloDAO {
             session.close();
         }
     }
+    public Articulo obtenerArticuloPorId(int id) {
+        Session session = sessionFactory.openSession();
+        Articulo articulo = null;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Object[] result = (Object[]) session.createSQLQuery(
+                            "SELECT nombre, precio, descripcion, existencias FROM articulos WHERE id_articulo = :id")
+                    .setParameter("id", id)
+                    .uniqueResult();
+            if (result != null) {
+                String nombre = (String) result[0];
+                double precio = ((Number) result[1]).doubleValue();
+                String descripcion = (String) result[2];
+                int existencias = ((Number) result[3]).intValue();
+                articulo = new Articulo(nombre, precio, descripcion, existencias);
+            }
+            tx.commit();
+        } finally {
+            session.close();
+        }
+        return articulo;
+    }
+    public Articulo obtenerArticuloPorNombre(String nombre) {
+        Session session = sessionFactory.openSession();
+        Articulo articulo = null;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Object[] result = (Object[]) session.createSQLQuery(
+                            "SELECT precio, descripcion, existencias FROM articulos WHERE nombre like '% :nombre %'")
+                    .setParameter("nombre", nombre)
+                    .uniqueResult();
+            if (result != null) {
+                double precio = ((Number) result[0]).doubleValue();
+                String descripcion = (String) result[1];
+                int existencias = ((Number) result[2]).intValue();
+                articulo = new Articulo(nombre, precio, descripcion, existencias);
+            }
+            tx.commit();
+        } finally {
+            session.close();
+        }
+        return articulo;
+    }
+    public Articulo obtenerArticuloPorFecha(Date fecha) {
+        Session session = sessionFactory.openSession();
+        Articulo articulo = null;
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Object[] result = (Object[]) session.createSQLQuery(
+                            "SELECT nombre, precio, descripcion, existencias FROM articulos WHERE fecha_publicacion = :fecha")
+                    .setParameter("fecha", fecha)
+                    .uniqueResult();
+            if (result != null) {
+                String nombre = (String) result[0];
+                double precio = ((Number) result[1]).doubleValue();
+                String descripcion = (String) result[2];
+                int existencias = ((Number) result[3]).intValue();
+                articulo = new Articulo(nombre, precio, descripcion, existencias);
+            }
+            tx.commit();
+        } finally {
+            session.close();
+        }
+        return articulo;
+    }
+
+    public static List<Articulo> obtenerTodosLosArticulos() {
+        List<Articulo> articulos = new ArrayList<>();
+
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            try {
+                // Obtener todos los artículos
+                List<Object[]> resultados = session.createSQLQuery(
+                                "SELECT id_articulo, nombre, precio, descripcion, existencias, fecha_publicacion FROM articulos ORDER BY fecha_publicacion DESC")
+                        .list();
+
+                // Para cada artículo, obtener sus etiquetas
+                for (Object[] row : resultados) {
+                    int idArticulo = ((Number) row[0]).intValue();
+                    String nombre = (String) row[1];
+                    double precio = ((Number) row[2]).doubleValue();
+                    String descripcion = (String) row[3];
+                    int existencias = ((Number) row[4]).intValue();
+                    Date fechaPublicacion = (Date) row[5];
+
+                    Articulo articulo = new Articulo(idArticulo, nombre, precio, descripcion, existencias, fechaPublicacion);
+
+                    // Obtener las etiquetas del artículo
+                    List<Etiquetas> etiquetas = obtenerEtiquetasPorArticulo(idArticulo);
+                    articulo.setEtiquetas(etiquetas);
+
+                    articulos.add(articulo);
+                }
+
+                tx.commit();
+            } catch (Exception e) {
+                if (tx != null) tx.rollback();
+                throw e;
+            }
+        }
+
+        return articulos;
+    }
+
+    public static List<Etiquetas> obtenerEtiquetasPorArticulo(int idArticulo) {
+        List<Etiquetas> etiquetas = new ArrayList<>();
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            try {
+                // Obtener las etiquetas asociadas al artículo por su ID
+                List<String> etiquetasResult = session.createSQLQuery(
+                                "SELECT nombre_etiqueta FROM articulo_etiqueta WHERE id_articulo = :id_articulo")
+                        .setParameter("id_articulo", idArticulo)
+                        .list();
+
+                // Convertir las etiquetas obtenidas en objetos de tipo Etiquetas
+                for (String nombreEtiqueta : etiquetasResult) {
+                    try {
+                        Etiquetas etiqueta = Etiquetas.desdeNombre(nombreEtiqueta);
+                        etiquetas.add(etiqueta);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Etiqueta no válida encontrada en DB: " + nombreEtiqueta);
+                    }
+                }
+
+                tx.commit();
+            } catch (Exception e) {
+                if (tx != null) tx.rollback();
+                throw e;
+            }
+        }
+        return etiquetas;
+    }
+
+
 }

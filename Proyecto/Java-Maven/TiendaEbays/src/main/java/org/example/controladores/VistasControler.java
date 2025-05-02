@@ -4,10 +4,13 @@ import freemarker.template.Configuration;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinFreemarker;
 import org.example.Main;
+import org.example.articulos.Articulo;
+import org.example.articulos.ArticuloDAO;
 import org.example.users.Usuario;
 import org.example.users.UsuarioDAO;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class VistasControler {
@@ -23,6 +26,9 @@ public class VistasControler {
         // Ruta para renderizar una plantilla con datos
         app.get("/", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
+            List<Articulo> articulos = ArticuloDAO.obtenerTodosLosArticulos();
+
+
             Map<String, Object> model = new HashMap<>();
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa

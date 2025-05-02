@@ -9,6 +9,7 @@ import org.example.users.Usuario;
 import org.example.users.UsuarioDAO;
 
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,6 +45,8 @@ public class Main {
 
         ArticuloDAO.comprobarInsertarArticulos(arti3, user1);
         */
+
+
         VistasControler.initVistas();
     }
 }
