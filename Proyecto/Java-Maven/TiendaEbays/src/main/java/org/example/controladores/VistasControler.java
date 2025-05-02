@@ -65,11 +65,8 @@ public class VistasControler {
             ctx.render("registrarse.ftl", model);
         });
         app.get("/busqueda", ctx -> {
-            // Crear un mapa de datos a pasar a la plantilla
-            Map<String, Object> model = new HashMap<>();
-
-            // Renderizar la plantilla index.ftl y pasar los datos del mapa
-            ctx.render("busqueda.ftl", model);
+            List<Articulo> articulos = ArticuloDAO.obtenerTodosLosArticulos(); // Obtener los artículos
+            ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar la lista de artículos a la plantilla
         });
         app.get("/aboutus", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
