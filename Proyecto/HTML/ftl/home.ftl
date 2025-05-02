@@ -65,27 +65,27 @@
             <h1>Lo mas vendido</h1>
             <div class="objetos">
                 <div class="objeto">
-                    <a href="product.html"><a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a></a>
+                    <a href="product.html"><a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
@@ -93,27 +93,27 @@
             <h1>Tendencias</h1>
             <div class="objetos">
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
@@ -121,27 +121,27 @@
             <h1>Novedades</h1>
             <div class="objetos">
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
                 <div class="objeto">
-                    <a href="product.html"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
+                    <a href="product.html"><img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt=""></a>
                     <h3>Titulo objeto</h3>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
                 </div>
