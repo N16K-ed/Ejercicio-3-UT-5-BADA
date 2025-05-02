@@ -109,14 +109,18 @@
         <h1>Resultados de tu busqueda</h1>
         <div class="resultadoGrid">
             <#list articulos as articulo>
-                <div class="objecto">
-                    <a href="/product?id=${articulo.idArticulo}">
-                        <img src="../imajes/objetoimagen.png" height="150px" alt="">
-                    </a>
-                    <h3>${articulo.nombre}</h3>
-                    <p>${articulo.descripcion}</p>
-                </div>
-            </#list>
+                <#if articulo??>
+                    <div>
+                        <a href="/product?id=${articulo.idArticulo}">
+                            <img src="../imajes/objetoimagen.png" height="150px" alt="">
+                        </a>
+                        <h3>${articulo.nombre}</h3>
+                        <p>${articulo.descripcion}</p>
+                    </div>
+                <#else>
+                        <p>No se encontró el artículo.</p>
+                    </#if>
+                </#list>
         </div>
     </div>
 
