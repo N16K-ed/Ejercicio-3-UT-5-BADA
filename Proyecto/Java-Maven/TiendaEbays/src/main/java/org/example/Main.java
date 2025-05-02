@@ -21,13 +21,15 @@ public class Main {
 
         /*
         Pruebas de la base de datos
-
+*/
         Usuario user1 = new Usuario("PEPE","1","2", "PepaPig","1234","pepa@gmail.com");
-        Usuario user2 = new Usuario("PEPEADMIN","1","2", "PepaPigAdmin","1234","pepa@gmail.com");
-        user2.setAdmin(true);
+        Usuario user2 = new Usuario("MARIO","1","2", "Mario","1234","mario@gmail.com");
+        Usuario user3 = new Usuario("PEPEADMIN","1","2", "PepaPigAdmin","1234","pepa@gmail.com");
+        user3.setAdmin(true);
 
         UsuarioDAO.comprobarInsertarUsuarios(user1);
         UsuarioDAO.comprobarInsertarUsuarios(user2);
+        UsuarioDAO.comprobarInsertarUsuarios(user3);
 
         Articulo arti1 = new Articulo("Articulo1", 10.0, "Descripcion1",1);
         Articulo arti2 = new Articulo( "Articulo2", 20.0, "Descripcion2",5);
@@ -39,14 +41,13 @@ public class Main {
         arti2.getEtiquetas().add(Etiquetas.ELECTRONICA);
         arti3.getEtiquetas().add(Etiquetas.DEPORTES);
 
-        ArticuloDAO.comprobarInsertarArticulos(arti1, user1);
+        user1.vender(arti1);
+        user1.vender(arti2);
+        user1.vender(arti3);
 
-        ArticuloDAO.comprobarInsertarArticulos(arti2, user1);
-
-        ArticuloDAO.comprobarInsertarArticulos(arti3, user1);
-        */
-
-
+        user2.comprar(arti1, 2);
+        user2.comprar(arti2, 3);
+        List<String[]> historial = user2.verHistorialCompras();
         VistasControler.initVistas();
     }
 }

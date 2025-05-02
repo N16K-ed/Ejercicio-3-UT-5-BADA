@@ -1,6 +1,10 @@
 package org.example.users;
 
 import org.example.articulos.Articulo;
+import org.example.articulos.ArticuloDAO;
+import org.example.funciones.Compra;
+
+import java.util.ArrayList;
 
 // Solo consultas
 // No puede modificar nada
@@ -12,6 +16,7 @@ public class Usuario {
     private String email;
     private String contrasenya;
     private boolean esAdmin;
+    private int idUsuario;
 
     public Usuario(String nombre, String apellido1, String apellido2, String nombre_usuario, String contrasenya, String email) {
         this.nombre = nombre;
@@ -23,6 +28,16 @@ public class Usuario {
         this.esAdmin = false;
     }
 
+    public Usuario(String nombre, String apellido1, String apellido2, String nombre_usuario, String contrasenya, String email, int idUsuario) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.nombre_usuario = nombre_usuario;
+        this.contrasenya = contrasenya;
+        this.email = email;
+        this.esAdmin = false;
+        this.idUsuario = idUsuario;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -50,16 +65,31 @@ public class Usuario {
     public boolean isEsAdmin() {
         return esAdmin;
     }
-    public void comprar(Articulo articulo) {
-        // Implementar la lógica de compra
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void comprar(Articulo articulo, int cantidad) {
+        try{
+        Compra.realizarCompra(this, articulo, cantidad);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void vender(Articulo articulo) {
-        // Implementar la lógica de venta
+        try {
+            ArticuloDAO.comprobarInsertarArticulos(articulo, this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
-    public void verHistorialCompras() {
-        // Lógica para ver su historial de compras
+    public ArrayList<String[]> verHistorialCompras() {
+        return UsuarioDAO.obtenerHistorial(this);
     }
+
     public void setAdmin(boolean esAdmin) {
         this.esAdmin = esAdmin;
     }

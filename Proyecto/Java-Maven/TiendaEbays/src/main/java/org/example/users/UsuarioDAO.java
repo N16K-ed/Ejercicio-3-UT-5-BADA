@@ -5,6 +5,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class UsuarioDAO {
 
     private static final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -59,6 +64,7 @@ public class UsuarioDAO {
                 session.close();
             }
         }
+
     public static boolean comprobarUsuarios(String usuario) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
@@ -68,12 +74,11 @@ public class UsuarioDAO {
                             "SELECT codigo_usuario FROM usuarios WHERE nombre_usuario = :nombre")
                     .setParameter("nombre", usuario.toLowerCase())
                     .uniqueResult();
+            tx.commit();
             if (idUsuario == null) {
-                tx.commit();
                 return false;
             } else {
 
-                tx.commit();
                 return true;
             }
         } catch (Exception e) {
@@ -83,4 +88,62 @@ public class UsuarioDAO {
             session.close();
         }
     }
+    public static ArrayList<String[]> obtenerHistorial(Usuario usuario) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        ArrayList<String[]> historial = new ArrayList<>();
+        try {
+            tx = session.beginTransaction();
+
+            List<Object[]> resultados = session.createSQLQuery(
+                            "SELECT a.nombre, c.cantidad, c.fecha_compra " +
+                                    "FROM compras c " +
+                                    "JOIN articulos a ON c.nom_art = a.nombre " +
+                                    "WHERE c.nom_user = :nom_usuario")
+                    .setParameter("nom_usuario", usuario.getNombre_usuario())
+                    .list();
+
+
+
+            for (Object[] fila : resultados) {
+                String nombreArticulo = (String) fila[0];
+                Integer cantidad = ((Number) fila[1]).intValue();
+                Date fechaCompra = (Date) fila[2];
+
+                String[] datos = new String[] {
+                        nombreArticulo,
+                        String.valueOf(cantidad),
+                        fechaCompra.toString().substring(0, 10)
+                };
+                historial.add(datos);
+            }
+
+            tx.commit();
+            return historial;
+
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
     }
+
+    public static void eliminarUsuario(Usuario usuario) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.createSQLQuery("DELETE FROM usuarios WHERE nombre_usuario = :nombre")
+                    .setParameter("nombre", usuario.getNombre_usuario())
+                    .executeUpdate();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+
+}

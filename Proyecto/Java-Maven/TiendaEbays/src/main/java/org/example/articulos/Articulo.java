@@ -76,4 +76,8 @@ public class Articulo {
     public void setEtiquetas(List<Etiquetas> etiquetas) {
         this.etiquetas = etiquetas;
     }
+
+    public void setExistencias(int existencias) {
+        this.existencias = existencias;
+    }
 }

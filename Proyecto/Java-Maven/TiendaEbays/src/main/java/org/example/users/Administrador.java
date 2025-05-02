@@ -2,6 +2,8 @@ package org.example.users;
 
 import org.example.articulos.Articulo;
 
+import java.util.ArrayList;
+
 
 //Puede realizar las operaciones CRUD
 public class Administrador extends Usuario{
@@ -32,8 +34,9 @@ public class Administrador extends Usuario{
         // Lógica para gestionar valoraciones
     }
     @Override
-    public void verHistorialCompras() {
+    public ArrayList<String[]> verHistorialCompras() {
         // Lógica para ver TODO el historial de compras
+        return null;
     }
     public void verHistorialComprasUsusario(Usuario usuario) {
         usuario.verHistorialCompras();
