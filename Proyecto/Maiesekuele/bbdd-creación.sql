@@ -24,7 +24,7 @@ existencias int not null,
 precio decimal(7,2) not null,
 fecha_publicacion datetime not null,
 codigo_usuario int not null,
-constraint fk_user_pone_art foreign key (codigo_usuario) references usuarios(codigo_usuario),
+constraint fk_user_pone_art foreign key (codigo_usuario) references usuarios(codigo_usuario) on delete cascade,
 constraint chk_existencias check (existencias >= 0),
 constraint chk_precio check (precio >= 0)
 );
@@ -32,12 +32,12 @@ constraint chk_precio check (precio >= 0)
 drop table if exists compras;
 create table compras(
 id_compra int primary key auto_increment,
-nom_user varchar(50) unique not null,
-nom_art varchar(150) unique not null,
+nom_user varchar(50) not null,
+nom_art varchar(150) not null,
 cantidad int not null,
-fecha_compra date not null,
+fecha_compra datetime not null,
 constraint fk_user_compra foreign key (nom_user) references usuarios(nombre_usuario),
-constraint fk_art_compra foreign key (nom_art) references articulos(nombre)
+constraint fk_art_compra foreign key (nom_art) references articulos(nombre) on delete cascade on update cascade
 );
 
 drop table if exists etiquetas;
@@ -49,7 +49,7 @@ create table articulo_etiqueta (
     id_articulo int,
     nombre_etiqueta varchar(30),
     primary key (id_articulo, nombre_etiqueta),
-    foreign key (id_articulo) references articulos(id_articulo),
+    foreign key (id_articulo) references articulos(id_articulo) on update cascade on delete cascade,
     foreign key (nombre_etiqueta) references etiquetas(nombre)
 );
 

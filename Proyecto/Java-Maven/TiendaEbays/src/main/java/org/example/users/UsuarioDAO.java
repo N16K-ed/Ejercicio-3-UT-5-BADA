@@ -64,6 +64,7 @@ public class UsuarioDAO {
                 session.close();
             }
         }
+
     public static Usuario obtenerUsuario(String nombre_usuario) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
@@ -180,4 +181,39 @@ public class UsuarioDAO {
         }
     }
 
+    public static ArrayList<Usuario> obtenerUsuarios() {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        try {
+            tx = session.beginTransaction();
+            List<Object[]> resultados = session.createSQLQuery(
+                            "SELECT nombre, apellido1, apellido2, nombre_usuario, email, contrasenya, esAdmin " +
+                                    "FROM usuarios")
+                    .list();
+
+            for (Object[] fila : resultados) {
+                String nombre = (String) fila[0];
+                String apellido1 = (String) fila[1];
+                String apellido2 = (String) fila[2];
+                String nombreUsuario = (String) fila[3];
+                String email = (String) fila[4];
+                String contrasenya = (String) fila[5];
+                boolean esAdmin = (Boolean) fila[6];
+
+                Usuario usuario = new Usuario(nombre, apellido1, apellido2, nombreUsuario, contrasenya, email);
+                usuario.setAdmin(esAdmin);
+                usuarios.add(usuario);
+            }
+
+            tx.commit();
+            return usuarios;
+
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
 }

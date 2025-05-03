@@ -173,8 +173,20 @@ public class VistasControler {
             ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar los artículos a la plantilla
         });
 
+        app.get("/eliminar", ctx -> {
+
+            String nomUser = ctx.queryParam("nom_user");
+            Usuario user = UsuarioDAO.obtenerUsuario(nomUser);
+            UsuarioDAO.eliminarUsuario(user);
+
+
+            ctx.redirect("/admin");
+        });
+
         app.get("/admin", ctx -> {
+            List<Usuario> users =  UsuarioDAO.obtenerUsuarios();
             Map<String, Object> model = new HashMap<>();
+            model.put("usuarios", users);
             ctx.render("admin.ftl", model);
         });
 

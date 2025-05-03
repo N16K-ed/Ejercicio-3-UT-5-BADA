@@ -203,61 +203,20 @@
     </div>
     <div class="usuario">
         <h2>Usuarios</h2>
+        <#list usuarios as usuario>
         <div class="usuario-unico">
             <div class="info-con-boton">
                 <div class="info">
                     <img src="../imajes/usuario.jpg" alt="">
                     <div class="text">
-                        <p>Usuario</p>
+                        <p>${usuario.nombre_usuario}</p>
+                        <p>${usuario.email}</p>
                     </div>
                 </div>
-                <button class="btn-eliminar">Eliminar</button>
+                <button class="btn-eliminar" onclick="window.location.href='/eliminar?nom_user=${usuario.nombre_usuario}';">Eliminar</button>
             </div>
         </div>
-        <div class="usuario-unico">
-            <div class="info-con-boton">
-                <div class="info">
-                    <img src="../imajes/usuario.jpg" alt="">
-                    <div class="text">
-                        <p>Usuario</p>
-                    </div>
-                </div>
-                <button class="btn-eliminar">Eliminar</button>
-            </div>
-        </div>
-        <div class="usuario-unico">
-            <div class="info-con-boton">
-                <div class="info">
-                    <img src="../imajes/usuario.jpg" alt="">
-                    <div class="text">
-                        <p>Usuario</p>
-                    </div>
-                </div>
-                <button class="btn-eliminar">Eliminar</button>
-            </div>
-        </div>
-        <div class="usuario-unico">
-            <div class="info-con-boton">
-                <div class="info">
-                    <img src="../imajes/usuario.jpg" alt="">
-                    <div class="text">
-                        <p>Usuario</p>
-                    </div>
-                </div>
-                <button class="btn-eliminar">Eliminar</button>
-            </div>
-        </div>
-        <div class="usuario-unico">
-            <div class="info-con-boton">
-                <div class="info">
-                    <img src="../imajes/usuario.jpg" alt="">
-                    <div class="text">
-                        <p>Usuario</p>
-                    </div>
-                </div>
-                <button class="btn-eliminar">Eliminar</button>
-            </div>
-        </div>
+        </#list>
     </div>
     <footer>
         <div class="footerGrid">
