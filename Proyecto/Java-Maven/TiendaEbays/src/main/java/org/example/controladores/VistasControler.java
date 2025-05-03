@@ -134,12 +134,12 @@ public class VistasControler {
             Usuario usuario = UsuarioDAO.obtenerUsuario(nombreUsuario);
             if (usuario != null && usuario.getContrasenya().equals(contrasenya)) {
                 // Verificar si el usuario es administrador
-                if (usuario.isEsAdmin()) {
-                    ctx.sessionAttribute("usuario", "ADMIN");
-                } else {
-                    ctx.sessionAttribute("usuario", nombreUsuario);
-                }
-                ctx.render("fin_login.ftl", Map.of("usuario", nombreUsuario));
+                ctx.sessionAttribute("admin", "admin");
+                ctx.sessionAttribute("usuario", nombreUsuario);
+
+                model.put("usuario", nombreUsuario);
+                model.put("admin", usuario.isEsAdmin());
+                ctx.render("fin_login.ftl", model);
             } else {
                 // Renderizar la plantilla de error si las credenciales son incorrectas
                 ctx.render("error_credenciales.ftl", model);
@@ -172,5 +172,11 @@ public class VistasControler {
             }*/
             ctx.render("busqueda.ftl", Map.of("articulos", articulos)); // Pasar los artículos a la plantilla
         });
+
+        app.get("/admin", ctx -> {
+            Map<String, Object> model = new HashMap<>();
+            ctx.render("admin.ftl", model);
+        });
+
     }
 }
