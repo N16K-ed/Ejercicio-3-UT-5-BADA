@@ -104,7 +104,7 @@ public class ArticuloDAO {
             session.close();
         }
     }
-    public Articulo obtenerArticuloPorId(int id) {
+    public static Articulo obtenerArticuloPorId(int id) {
         Session session = sessionFactory.openSession();
         Articulo articulo = null;
         Transaction tx = null;
