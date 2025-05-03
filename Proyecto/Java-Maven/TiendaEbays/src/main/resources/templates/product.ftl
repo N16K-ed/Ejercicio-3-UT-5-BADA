@@ -279,26 +279,17 @@
         </div>
         <h1 class="tituloOtros"><a href="#gridRecomendados" id="gridRecomendados">↓ Otros objetos que te pueden interesar :) ↓</a></h1>
         <div class="gridRecomendados">
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
-            <div class="objecto">
-                <a href=""><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                <h3>Titulo objeto</h3>
-                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-            </div>
+            <#list articulos as articulo>
+                <#if articulo?index < 5>
+                    <div class="objecto">
+                        <a href="/product?id=${articulo.idArticulo}">
+                            <img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt="">
+                        </a>
+                        <h3>${articulo.nombre}</h3>
+                        <p>${articulo.descripcion}</p>
+                    </div>
+                </#if>
+            </#list>
         </div>
         <footer>
             <h3>Parece que has llegado al final :)<br>Dale a la barra de búsqueda para buscar algo más específico</h3>
