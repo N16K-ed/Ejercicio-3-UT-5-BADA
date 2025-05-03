@@ -288,19 +288,19 @@
 
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="../imajes/banner.png" style="width:100%">
+                <img src="https://i.ibb.co/sJHV9cDh/banner.png" style="width:100%">
                 <div class="text">Caption Text</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="../imajes/banner.png" style="width:100%">
+                <img src="https://i.ibb.co/sJHV9cDh/banner.png" style="width:100%">
                 <div class="text">Caption Two</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="../imajes/banner.png" style="width:100%">
+                <img src="https://i.ibb.co/sJHV9cDh/banner.png" style="width:100%">
                 <div class="text">Caption Three</div>
             </div>
 
@@ -318,87 +318,45 @@
         <div class="venta">
             <h1>Lo mas vendido</h1>
             <div class="objetos">
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
+                <#list articulos as articulo>
+                    <#if articulo?index < 5>
+                        <div class="objeto">
+                            <a href="/product?id=${articulo.idArticulo}">
+                                <img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt="">
+                            </a>
+                            <h3>${articulo.nombre}</h3>
+                            <p>${articulo.descripcion}</p>
+                        </div>
+                    </#if>
+                </#list>
             </div>
             <h1>Tendencias</h1>
             <div class="objetos">
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
+                <#list articulos as articulo>
+                    <#if articulo?index < 5>
+                        <div class="objeto">
+                            <a href="/product?id=${articulo.idArticulo}">
+                                <img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt="">
+                            </a>
+                            <h3>${articulo.nombre}</h3>
+                            <p>${articulo.descripcion}</p>
+                        </div>
+                    </#if>
+                </#list>
             </div>
             <h1>Novedades</h1>
             <div class="objetos">
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-                <div class="objeto">
-                    <a href="/product"><img src="../imajes/objetoimagen.png" height="150px" alt=""></a>
-                    <h3>Titulo objeto</h3>
-                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
+                <#list articulos as articulo>
+                    <#if articulo?index < 5>
+                        <div class="objeto">
+                            <a href="/product?id=${articulo.idArticulo}">
+                                <img src="https://i.ibb.co/Xk21hzFj/objetoimagen.png" height="150px" alt="">
+                            </a>
+                            <h3>${articulo.nombre}</h3>
+                            <p>${articulo.descripcion}</p>
+                        </div>
+                    </#if>
+                </#list>
             </div>
         </div>
         <footer>
@@ -421,6 +379,36 @@
             </div>
         </footer>
     </div>
-    <script src="../JabaSprit/scripts.js"></script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        }
+
+    </script>
 </body>
 </html>
