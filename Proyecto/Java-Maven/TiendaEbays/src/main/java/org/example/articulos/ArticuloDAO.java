@@ -3,6 +3,7 @@ package org.example.articulos;
 import org.example.users.Usuario;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.transform.Transformers;
 import org.hibernate.type.StandardBasicTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class ArticuloDAO {
 
@@ -230,8 +232,9 @@ public class ArticuloDAO {
                 // Convertir las etiquetas obtenidas en objetos de tipo Etiquetas
                 for (String nombreEtiqueta : etiquetasResult) {
                     try {
+                        // Convertimos el nombre de la etiqueta en el valor del enum
                         Etiquetas etiqueta = Etiquetas.desdeNombre(nombreEtiqueta);
-                        etiquetas.add(etiqueta);
+                        etiquetas.add(etiqueta); // Agregar la etiqueta al listado
                     } catch (IllegalArgumentException e) {
                         System.out.println("Etiqueta no válida encontrada en DB: " + nombreEtiqueta);
                     }
@@ -245,6 +248,7 @@ public class ArticuloDAO {
         }
         return etiquetas;
     }
+
 
     public void anyadirExistencias(int idArticulo, int cantidad) {
         Session session = sessionFactory.openSession();
@@ -270,4 +274,41 @@ public class ArticuloDAO {
         }
     }
 
+
+
+    public static List<Articulo> obtenerArticulosPorEtiqueta(Etiquetas etiqueta) {
+        List<Articulo> articulos = new ArrayList<>();
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            try {
+                // Consulta para obtener artículos con la etiqueta especificada
+                List<Object[]> resultados = session.createSQLQuery(
+                                "SELECT a.id_articulo, a.nombre, a.precio, a.descripcion, a.existencias, a.fecha_publicacion " +
+                                        "FROM articulos a " +
+                                        "JOIN articulo_etiqueta ae ON a.id_articulo = ae.id_articulo " +
+                                        "JOIN etiquetas e ON ae.id_etiqueta = e.id_etiqueta " +
+                                        "WHERE e.nombre_etiqueta = :etiqueta")
+                        .setParameter("etiqueta", etiqueta.getNombre())
+                        .list();
+
+                for (Object[] row : resultados) {
+                    int idArticulo = ((Number) row[0]).intValue();
+                    String nombre = (String) row[1];
+                    double precio = ((Number) row[2]).doubleValue();
+                    String descripcion = (String) row[3];
+                    int existencias = ((Number) row[4]).intValue();
+                    Date fechaPublicacion = (Date) row[5];
+
+                    Articulo articulo = new Articulo(idArticulo, nombre, precio, descripcion, existencias, fechaPublicacion);
+                    articulos.add(articulo);
+                }
+
+                tx.commit();
+            } catch (Exception e) {
+                if (tx != null) tx.rollback();
+                throw e;
+            }
+        }
+        return articulos;
+    }
 }

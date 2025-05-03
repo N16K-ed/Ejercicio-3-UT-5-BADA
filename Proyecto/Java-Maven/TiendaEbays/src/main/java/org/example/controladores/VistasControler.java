@@ -32,7 +32,7 @@ public class VistasControler {
 
 
             Map<String, Object> model = new HashMap<>();
-
+            model.put("articulos", articulos);
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
             ctx.render("home.ftl", model);
         });
@@ -84,6 +84,7 @@ public class VistasControler {
             Map<String, Object> model = new HashMap<>();
             int query = Integer.parseInt(ctx.queryParam("id"));
             List<Articulo> articulos;
+
             articulos = Collections.singletonList(ArticuloDAO.obtenerArticuloPorId(query));
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
@@ -184,11 +185,18 @@ public class VistasControler {
         });
 
         app.get("/admin", ctx -> {
+            if(ctx.sessionAttribute("admin") == null){
+                ctx.redirect("/");
+                return;
+            }
             List<Usuario> users =  UsuarioDAO.obtenerUsuarios();
             Map<String, Object> model = new HashMap<>();
             model.put("usuarios", users);
             ctx.render("admin.ftl", model);
         });
-
+        app.get("/cerrar", ctx -> {
+            ctx.req().getSession().invalidate();
+            ctx.redirect("/");
+        });
     }
 }

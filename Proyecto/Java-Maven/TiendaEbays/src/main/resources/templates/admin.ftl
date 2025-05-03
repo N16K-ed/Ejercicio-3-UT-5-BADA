@@ -192,13 +192,12 @@
 <body>
     <div class="wrapper">
         <div class="topnav">
-            <a class="active" href="home.html">Evai</a>
-            <form action="">
-                <input type="text" placeholder="Buscar..." name="" id="">
-                <button><i class="fa fa-search" style="color: white;"></i></button>
+            <a class="active" href="/">Evai</a>
+            <form action="/busqueda" method="get">
+                            <input type="text" placeholder="Buscar..." name="query" id="searchInput">
+                            <button><i class="fa fa-search" style="color: white;"></i></button>
             </form>
-            <a href="login.html">Login</a>
-            <a href="registrarse.html">Registrarse</a>
+            <a href="/cerrar">Cerrar Sesión</a>
         </div>
     </div>
     <div class="usuario">
@@ -222,9 +221,9 @@
         <div class="footerGrid">
             <div>
                 <ul>
-                    <li><a href="aboutus.html">Sobre nosotros</a></li>
-                    <li><a href="registrarse.html">Registrarse</a></li>
-                    <li><a href="login.html">Iniciar sesion</a></li>
+                    <li><a href="/aboutus">Sobre nosotros</a></li>
+                    <li><a href="/registrarse">Registrarse</a></li>
+                    <li><a href="/login">Iniciar sesion</a></li>
                 </ul>
             </div>
             <div>

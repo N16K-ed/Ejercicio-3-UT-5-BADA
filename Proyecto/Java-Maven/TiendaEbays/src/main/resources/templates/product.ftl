@@ -247,14 +247,14 @@
             <a href="/regis">Registrarse</a>
         </div>
         <div class="categorias">
-            <a href="/busqueda">Electronica</a>
-            <a href="/busqueda">Jardin</a>
-            <a href="/busqueda">Moda</a>
-            <a href="/busqueda">Motor</a>
-            <a href="/busqueda">Deportes</a>
-            <a href="/busqueda">Juguetes y ocio</a>
-            <a href="/busqueda">Equipamiento industrial</a>
-            <a href="/busqueda">Ofertas</a>
+            <a href="/busqueda?tag=Electronica">Electrónica</a>
+            <a href="/busqueda?tag=Jardin">Jardín</a>
+            <a href="/busqueda?tag=Moda">Moda</a>
+            <a href="/busqueda?tag=Motor">Motor</a>
+            <a href="/busqueda?tag=Deportes">Deportes</a>
+            <a href="/busqueda?tag=JuguetesYocio">Juguetes y ocio</a>
+            <a href="/busqueda?tag=EquipamientoIndustrial">Equipamiento industrial</a>
+            <a href="/busqueda?tag=Ofertas">Ofertas</a>
         </div>
         <div class="gridObjectoPrincipal">
             <div class="image">
@@ -270,11 +270,7 @@
                 </#list>
 
                 <button>Añadir al carrito</button>
-                <h3>Etiquetas:</h3>
-                <ul>
-                    <li>Etiqueta 1</li>
-                    <li>Etiqueta 2</li>
-                </ul>
+
             </div>
         </div>
         <h1 class="tituloOtros"><a href="#gridRecomendados" id="gridRecomendados">↓ Otros objetos que te pueden interesar :) ↓</a></h1>

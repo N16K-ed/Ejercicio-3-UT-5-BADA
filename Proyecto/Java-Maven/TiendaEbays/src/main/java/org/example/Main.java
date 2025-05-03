@@ -13,15 +13,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
+        /*
         // Actualizar la base de datos con las etiquetas
         for (Etiquetas etq: Etiquetas.values()) {
             EtiquetasDAO.comprobarInsertarEtiquetas(etq);
         }
 
-        /*
+
         Pruebas de la base de datos
-*/
+
         Usuario user1 = new Usuario("PEPE","1","2", "PepaPig","1234","pepa@gmail.com");
         Usuario user2 = new Usuario("MARIO","1","2", "Mario","1234","mario@gmail.com");
         Usuario user3 = new Usuario("PEPEADMIN","1","2", "PepaPigAdmin","1234","pepa@gmail.com");
@@ -48,6 +48,9 @@ public class Main {
         user2.comprar(arti1, 2);
         user2.comprar(arti2, 3);
         List<String[]> historial = user2.verHistorialCompras();
+
+        */
+
         VistasControler.initVistas();
     }
 }

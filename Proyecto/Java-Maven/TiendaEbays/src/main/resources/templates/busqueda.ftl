@@ -45,7 +45,7 @@
             border-radius: 10px;
         }
 
-        .resultadoGrid  div  p{
+        .resultadoGrid  div  p {
             text-align: center;
             margin: auto;
         }
@@ -55,7 +55,7 @@
             background-color: #414141;
         }
 
-        .topnav a{
+        .topnav a {
             display: inline-block;
             color: white;
             text-align: center;
@@ -91,7 +91,6 @@
             border: none;
         }
 
-
     </style>
 </head>
 <body>
@@ -106,16 +105,15 @@
     </div>
 
     <div class="resultados">
-        <h1>Resultados de tu busqueda</h1>
-        <div class="resultadoGrid">
-            <#if articulos?size == 0>
-                <p>no hay nada llamado como lo que has buscado</p>
-            <#else>
+        <h1>Resultados de tu búsqueda</h1>
+
+        <#if articulos?has_content>
+            <div class="resultadoGrid">
                 <#list articulos as articulo>
                     <#if articulo??>
                         <div>
                             <a href="/product?id=${articulo.idArticulo}">
-                                <img src="../imajes/objetoimagen.png" height="150px" alt="">
+                                <img src="../imajes/objetoimagen.png" height="150px" alt="${articulo.nombre}">
                             </a>
                             <h3>${articulo.nombre}</h3>
                             <p>${articulo.descripcion}</p>
@@ -124,9 +122,10 @@
                         <p>No se encontró el artículo.</p>
                     </#if>
                 </#list>
-            </#if>
-        </div>
+            </div>
+        <#else>
+            <p>No se encontraron productos.</p>
+        </#if>
     </div>
-
 </body>
 </html>
