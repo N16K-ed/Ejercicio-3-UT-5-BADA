@@ -82,9 +82,12 @@ public class VistasControler {
         app.get("/product", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
+            int query = Integer.parseInt(ctx.queryParam("id"));
+            List<Articulo> articulos;
+            articulos = Collections.singletonList(ArticuloDAO.obtenerArticuloPorId(query));
 
             // Renderizar la plantilla index.ftl y pasar los datos del mapa
-            ctx.render("product.ftl", model);
+            ctx.render("product.ftl", Map.of("articulos", articulos));
         });
         app.post("/regis", ctx -> {
             // Obtener los parámetros del formulario y asegurarse de que no sean nulos
