@@ -78,7 +78,7 @@
 <body>
     <div class="wrapper">
         <div class="loginForm">
-            <#if usuario == "ADMIN">
+            <#if admin??>
                   <p>Bienvenido Administrador.</p>
                   <button type="button" onclick="window.location.href='/admin';">Ir al panel de administración</button>
                 <button type="button" onclick="window.location.href='/';">Volver al inicio</button>
