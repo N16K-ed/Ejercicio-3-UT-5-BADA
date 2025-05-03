@@ -78,8 +78,14 @@
 <body>
     <div class="wrapper">
         <div class="loginForm">
-            <h1>Has Iniciado sesión: ${usuario}</h1>
-            <button type="button" onclick="window.location.href='/';">Volver al inicio</button>
+            <#if usuario == "ADMIN">
+                  <p>Bienvenido Administrador.</p>
+                  <button type="button" onclick="window.location.href='/admin';">Ir al panel de administración</button>
+                <button type="button" onclick="window.location.href='/';">Volver al inicio</button>
+            <#else>
+                <h1>Has Iniciado sesión: ${usuario}</h1>
+                <button type="button" onclick="window.location.href='/';">Volver al inicio</button>
+            </#if>
         </div>
     </div>
 </body>

@@ -124,15 +124,23 @@ public class VistasControler {
         app.post("/inisesion", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla
             Map<String, Object> model = new HashMap<>();
-            model.put("usuario", ctx.formParam("usuario"));
-            model.put("contrasenya", ctx.formParam("contrasenya"));
-            if (UsuarioDAO.comprobarUsuarios(model.get("usuario").toString())){
-                ctx.render("fin_login.ftl", model);
-            }else{
-                // Renderizar la plantilla index.ftl y pasar los datos del mapa
+            String nombreUsuario = ctx.formParam("usuario");
+            String contrasenya = ctx.formParam("contrasenya");
+
+            // Verificar si el usuario existe
+            Usuario usuario = UsuarioDAO.obtenerUsuario(nombreUsuario);
+            if (usuario != null && usuario.getContrasenya().equals(contrasenya)) {
+                // Verificar si el usuario es administrador
+                if (usuario.isEsAdmin()) {
+                    ctx.sessionAttribute("usuario", "ADMIN");
+                } else {
+                    ctx.sessionAttribute("usuario", nombreUsuario);
+                }
+                ctx.render("fin_login.ftl", Map.of("usuario", nombreUsuario));
+            } else {
+                // Renderizar la plantilla de error si las credenciales son incorrectas
                 ctx.render("error_credenciales.ftl", model);
             }
-
         });
         app.get("/perfil_usuario", ctx -> {
             // Crear un mapa de datos a pasar a la plantilla

@@ -64,6 +64,40 @@ public class UsuarioDAO {
                 session.close();
             }
         }
+    public static Usuario obtenerUsuario(String nombre_usuario) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        Usuario usuario = null;
+        try {
+            tx = session.beginTransaction();
+            Object[] result = (Object[]) session.createSQLQuery(
+                            "SELECT nombre, apellido1, apellido2, nombre_usuario, email, contrasenya, esAdmin " +
+                                    "FROM usuarios WHERE nombre_usuario = :nombre")
+                    .setParameter("nombre", nombre_usuario.toLowerCase())
+                    .uniqueResult();
+
+            if (result != null) {
+                String nombre = (String) result[0];
+                String apellido1 = (String) result[1];
+                String apellido2 = (String) result[2];
+                String nombreUsuario = (String) result[3];
+                String email = (String) result[4];
+                String contrasenya = (String) result[5];
+                boolean esAdmin = (Boolean) result[6];
+
+                usuario = new Usuario(nombre, apellido1, apellido2, nombreUsuario, contrasenya, email);
+                usuario.setAdmin(esAdmin);
+            }
+
+            tx.commit();
+            return usuario;
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
 
     public static boolean comprobarUsuarios(String usuario) {
         Session session = sessionFactory.openSession();
