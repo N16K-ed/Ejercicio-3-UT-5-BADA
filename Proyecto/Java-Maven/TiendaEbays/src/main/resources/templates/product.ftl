@@ -261,9 +261,14 @@
                 <img src="../imajes/objetoimagen.png" alt="" width="400px">
             </div>
             <div class="object">
-                <h1>Nombre objecto</h1>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis pretium sapien. Curabitur ac lorem sit amet sem venenatis fermentum ac et augue. Nam porttitor in mi maximus tempus. Morbi ut vehicula tellus, id faucibus lacus. Fusce fermentum molestie eros vitae pulvinar. Morbi pharetra nisi ut mollis iaculis. Fusce nec nulla turpis. Sed nec elementum dolor. </p>
-                <h2 style="font-weight: normal;text-decoration: underline;">Precio: 9.99€</h2>
+                <#list articulos as articulo>
+                    <#if articulo??>
+                        <h1>${articulo.nombre}</h1>
+                        <p>${articulo.descripcion}</p>
+                        <h2 style="font-weight: normal;text-decoration: underline;">Precio: ${articulo.precio}€</h2>
+                    </#if>
+                </#list>
+
                 <button>Añadir al carrito</button>
                 <h3>Etiquetas:</h3>
                 <ul>
